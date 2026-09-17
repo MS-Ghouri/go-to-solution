@@ -44,22 +44,10 @@ Before deploying, search for and replace all placeholder values:
 | `[YOUR-DOMAIN]` | HTML, sitemap.xml | Your website domain |
 | `[PRICE]` | HTML | Package starting prices |
 | `[PROJECT TITLE]` | HTML | Portfolio project names |
-| `[YOUR_EMAILJS_PUBLIC_KEY]` | js/form.js | EmailJS public key |
-| `[YOUR_EMAILJS_SERVICE_ID]` | js/form.js | EmailJS service ID |
-| `[YOUR_EMAILJS_TEMPLATE_ID]` | js/form.js | EmailJS template ID |
 
-### EmailJS Setup
+### Contact Form (Formspree)
 
-1. Create a free account at [emailjs.com](https://www.emailjs.com/)
-2. Add an email service (Gmail, Outlook, etc.)
-3. Create an email template with these variables:
-   - `{{name}}` — Sender name
-   - `{{email}}` — Sender email
-   - `{{service}}` — Selected service
-   - `{{budget}}` — Budget range
-   - `{{message}}` — Project details
-4. Copy your **Service ID**, **Template ID**, and **Public Key**
-5. Paste them into `js/form.js` (lines 13–15)
+The contact form submits natively to Formspree endpoint `https://formspree.io/f/mnpnqrqk` with standard inputs (`name`, `email`, `message`, `service`, `budget`). No client-side API keys or script dependencies required.
 
 ### Portfolio Images
 
