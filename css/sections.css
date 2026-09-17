@@ -184,23 +184,15 @@
   min-height: calc(100vh - var(--nav-height));
   display: flex;
   align-items: center;
-  padding: calc(var(--nav-height) + var(--space-10)) 0 var(--space-16);
+  padding: calc(var(--nav-height) + var(--space-12)) 0 var(--space-20);
   position: relative;
   overflow: hidden;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.12fr 0.88fr;
-  gap: var(--space-12);
-  align-items: center;
-  position: relative;
-  z-index: var(--z-base);
 }
 
 .hero-content {
   position: relative;
   z-index: var(--z-base);
+  max-width: 680px;
 }
 
 .hero-badge {
@@ -248,41 +240,25 @@
   align-items: center;
 }
 
-/* Right Column: Blended Thematic Media */
-.hero-media {
-  position: relative;
-  z-index: var(--z-base);
-}
-
-.hero-media-wrapper {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #0d111a;
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.75);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.hero-media-wrapper::after {
-  content: '';
+/* Faded Background Developer Image */
+.hero-bg-faded-image {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  background-image: url('../assets/images/hero-developer.webp');
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.35;
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.95) 25%, rgba(0, 0, 0, 0.4) 65%, transparent 100%),
+              linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.95) 25%, rgba(0, 0, 0, 0.4) 65%, transparent 100%),
+                      linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
   pointer-events: none;
-  border-radius: 20px;
-  box-shadow: inset 0 0 35px 5px rgba(10, 13, 20, 0.45);
-}
-
-.hero-media-wrapper:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.85);
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  filter: contrast(1.08) brightness(0.92);
 }
 
 /* Subtle code background overlay */

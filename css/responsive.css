@@ -18,16 +18,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-10);
-    text-align: left;
-  }
-
-  .hero-media {
-    max-width: 600px;
-    width: 100%;
-    margin-inline: auto;
+  .hero-content {
+    max-width: 100%;
   }
 
   .about-grid {
@@ -106,6 +98,13 @@
 
   .hero-title {
     font-size: var(--text-3xl);
+  }
+
+  .hero-bg-faded-image {
+    width: 100%;
+    opacity: 0.16;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
   }
 
   .hero-description {
