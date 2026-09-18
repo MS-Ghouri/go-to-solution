@@ -56,6 +56,24 @@
   gap: var(--space-2);
 }
 
+.site-logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.nav-logo:hover .site-logo-img {
+  opacity: 0.92;
+  transform: scale(1.02);
+}
+
+.site-logo-img--footer {
+  height: 54px;
+}
+
 .nav-logo-mark {
   display: inline-flex;
   align-items: center;

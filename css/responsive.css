@@ -89,6 +89,10 @@
     display: flex;
   }
 
+  .site-logo-img {
+    height: 40px;
+  }
+
   /* Hero */
   .hero {
     min-height: auto;
