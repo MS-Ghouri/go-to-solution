@@ -213,4 +213,74 @@
       }
     });
   });
+
+  // ---- Portfolio Carousel Slider ----
+  document.querySelectorAll('.portfolio-carousel').forEach(function (carousel) {
+    const track = carousel.querySelector('.portfolio-carousel-track');
+    const slides = carousel.querySelectorAll('.portfolio-carousel-slide');
+    const prevBtn = carousel.querySelector('.carousel-btn--prev');
+    const nextBtn = carousel.querySelector('.carousel-btn--next');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    let currentIndex = 0;
+    const total = slides.length;
+
+    if (!track || total <= 1) return;
+
+    function goToSlide(index) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      currentIndex = index;
+
+      track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+
+      dots.forEach(function (dot, i) {
+        if (i === currentIndex) {
+          dot.classList.add('is-active');
+          dot.setAttribute('aria-selected', 'true');
+        } else {
+          dot.classList.remove('is-active');
+          dot.setAttribute('aria-selected', 'false');
+        }
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide(currentIndex + 1);
+      });
+    }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide(i);
+      });
+    });
+
+    // Touch swipe support
+    let startX = 0;
+    carousel.addEventListener('touchstart', function (e) {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function (e) {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) goToSlide(currentIndex + 1);
+        else goToSlide(currentIndex - 1);
+      }
+    }, { passive: true });
+  });
 })();
