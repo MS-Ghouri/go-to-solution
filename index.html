@@ -504,10 +504,33 @@
 
           <!-- Portfolio 3: MyNotesUp -->
           <article class="card card--interactive portfolio-card reveal" style="padding: 0;">
-            <div class="portfolio-image">
-              <img src="assets/images/portfolio-3.webp"
-                alt="MyNotesUp — Reusable sticky notes e-commerce storefront"
-                loading="lazy" width="640" height="400">
+            <div class="portfolio-carousel" id="notesup-carousel" aria-roledescription="carousel" aria-label="NotesUp Project Gallery">
+              <div class="portfolio-carousel-track">
+                <div class="portfolio-carousel-slide" aria-roledescription="slide" aria-label="1 of 3">
+                  <img src="assets/images/notesup-slide-1.png" alt="NotesUp — Sustainable Reusable Sticky Notes Hero" loading="lazy" width="640" height="400">
+                </div>
+                <div class="portfolio-carousel-slide" aria-roledescription="slide" aria-label="2 of 3">
+                  <img src="assets/images/notesup-slide-2.png" alt="NotesUp — Write, Erase, Repeat Endless Possibilities Feature" loading="lazy" width="640" height="400">
+                </div>
+                <div class="portfolio-carousel-slide" aria-roledescription="slide" aria-label="3 of 3">
+                  <img src="assets/images/notesup-slide-3.png" alt="NotesUp — Real-World Multi-Surface Application Gallery" loading="lazy" width="640" height="400">
+                </div>
+              </div>
+
+              <!-- Carousel Controls -->
+              <button type="button" class="carousel-btn carousel-btn--prev" aria-label="Previous image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-btn--next" aria-label="Next image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+
+              <!-- Carousel Indicators -->
+              <div class="carousel-dots" role="tablist" aria-label="NotesUp Gallery Dots">
+                <button type="button" class="carousel-dot is-active" role="tab" aria-label="Slide 1" aria-selected="true"></button>
+                <button type="button" class="carousel-dot" role="tab" aria-label="Slide 2" aria-selected="false"></button>
+                <button type="button" class="carousel-dot" role="tab" aria-label="Slide 3" aria-selected="false"></button>
+              </div>
             </div>
             <div class="portfolio-info">
               <span class="badge portfolio-category">E-Commerce Store</span>
