@@ -367,6 +367,98 @@
   line-height: 1;
 }
 
+/* ---- INDUSTRIES WE SERVE ---- */
+
+.industries-serve {
+  margin-top: var(--space-16);
+  padding: var(--space-10) var(--space-8);
+  background: linear-gradient(180deg, rgba(26, 26, 40, 0.45) 0%, rgba(18, 18, 26, 0.6) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.industries-serve::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79, 125, 247, 0.5), transparent);
+  pointer-events: none;
+}
+
+.industries-serve-header {
+  max-width: 580px;
+  margin-inline: auto;
+  margin-bottom: var(--space-8);
+}
+
+.industries-serve-header .section-label {
+  margin-bottom: var(--space-2);
+}
+
+.industries-serve-title {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-3);
+}
+
+.industries-serve-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-inline: auto;
+}
+
+.industries-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.industry-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 22px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  background: rgba(30, 30, 46, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+  cursor: default;
+  user-select: none;
+}
+
+.industry-pill:hover {
+  background: rgba(79, 125, 247, 0.12);
+  border-color: rgba(79, 125, 247, 0.35);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px -2px rgba(79, 125, 247, 0.25);
+}
+
+.industry-pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
+  flex-shrink: 0;
+}
+
 /* ---- ABOUT / WHY CHOOSE ---- */
 
 .about-grid {
